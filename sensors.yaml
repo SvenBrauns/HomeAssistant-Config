@@ -1,0 +1,236 @@
+- platform: github
+  access_token: !secret github_access_token
+  repositories:
+    - path: 'home-assistant/core'
+- platform: waste_collection_schedule
+  name: ButtonCardSensor1
+  value_template: '{{value.types|join(", ")}}|{{value.daysTo}}|{{value.date.strftime("%d.%m.%Y")}}|{{value.date.strftime("%a")}}'
+  types:
+    - Hausmüll 2W
+- platform: waste_collection_schedule
+  name: ButtonCardSensor2
+  value_template: '{{value.types|join(", ")}}|{{value.daysTo}}|{{value.date.strftime("%d.%m.%Y")}}|{{value.date.strftime("%a")}}'
+  types:
+    - Papiersammlung
+- platform: waste_collection_schedule
+  name: ButtonCardSensor3
+  value_template: '{{value.types|join(", ")}}|{{value.daysTo}}|{{value.date.strftime("%d.%m.%Y")}}|{{value.date.strftime("%a")}}'
+  types:
+    - Gelber Sack
+- platform: waste_collection_schedule
+  name: ButtonCardSensor4
+  value_template: '{{value.types|join(", ")}}|{{value.daysTo}}|{{value.date.strftime("%d.%m.%Y")}}|{{value.date.strftime("%a")}}'
+  types:
+    - Glassammlung
+- platform: template
+  sensors:
+    car_tire_pressure_rear_left:
+      friendly_name: Tire pressure Rear Left
+      value_template: '{{ states.binary_sensor.nom_bs134_tire_warning.attributes.tirepressureRearLeft|round(0)|float() / 100 }} Bar'
+    car_tire_pressure_rear_right:
+      friendly_name: Tire pressure Rear Right
+      value_template: '{{ states.binary_sensor.nom_bs134_tire_warning.attributes.tirepressureRearRight|round(0)|float() / 100 }} Bar'
+    car_tire_pressure_front_left:
+      friendly_name: Tire pressure Front Left
+      value_template: '{{ states.binary_sensor.nom_bs134_tire_warning.attributes.tirepressureFrontLeft|round(0)|float() / 100 }} Bar'
+    car_tire_pressure_front_right:
+      friendly_name: Tire pressure Front Right
+      value_template: '{{ states.binary_sensor.nom_bs134_tire_warning.attributes.tirepressureFrontRight|round(0)|float() / 100 }} Bar'
+    car_windows_closed:
+      friendly_name: Car windows closed
+      value_template: >-
+            {% if is_state('binary_sensor.nom_bs134_windows_closed', 'on')%}
+                Geschlossen
+            {% else %}
+                Offen
+            {% endif %} 
+    car_doors_closed:
+      friendly_name: Car Doors Closed
+      value_template: >-
+            {% if is_state_attr('sensor.nom_bs134_lock', 'doorStatusOverall', '1')%}
+                Geschlossen
+            {% else %}
+                Offen
+            {% endif %}
+      icon_template: >
+            {% if is_state_attr('sensor.nom_bs134_lock', 'doorStatusOverall', '1')%}
+            mdi:car-door
+            {% else %} 
+            mdi:car-door
+            {% endif %}
+    car_lock_status:      
+        friendly_name: Car Lock Status
+        value_template: >-
+            {% if is_state('sensor.nom_bs134_lock', '2')%}
+                Verriegelt
+            {% else %}
+                Entriegelt
+            {% endif %}  
+        icon_template: >
+            {% if is_state('sensor.nom_bs134_lock', '2')%}
+            mdi:lock-outline
+            {% else %} 
+            mdi:lock-open-variant-outline
+            {% endif %}
+    car_lock_gas:
+      friendly_name: Lock Gas
+      value_template: >-
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusgas', false)%}
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusgas', false)%}
+          mdi:lock-outline
+        {% else %} 
+          mdi:lock-open-variant-outline
+        {% endif %}
+    car_lock_front_right:
+      friendly_name: Lock Front Right
+      value_template: >-
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusfrontright', false)%}
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusfrontright', false)%}
+          mdi:lock-outline
+        {% else %} 
+          mdi:lock-open-variant-outline
+        {% endif %}
+    car_lock_front_left:
+      friendly_name: Lock Front Left
+      value_template: >-
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusfrontleft', false)%}
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusfrontleft', false)%}
+          mdi:lock-outline
+        {% else %} 
+          mdi:lock-open-variant-outline
+        {% endif %}
+    
+    car_lock_rear_right:
+      friendly_name: Lock Rear Right
+      value_template: >-
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusrearright', false)%}
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusrearright', false)%}
+          mdi:lock-outline
+        {% else %} 
+          mdi:lock-open-variant-outline
+        {% endif %}
+    
+    car_lock_rear_left:
+      friendly_name: Lock Rear Left
+      value_template: >-
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusrearleft', false)%}
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('sensor.nom_bs134_lock', 'doorlockstatusrearleft', false)%}
+          mdi:lock-outline
+        {% else %} 
+          mdi:lock-open-variant-outline
+        {% endif %}
+    
+    car_lock_trunk:
+      friendly_name: Lock trunk
+      value_template: >-
+        {% if is_state_attr('sensor.nom_bs134_lock', 'decklidstatus', false)%} 
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('sensor.nom_bs134_lock', 'decklidstatus', false)%} 
+          mdi:lock-outline
+        {% else %}
+          mdi:lock-open-variant-outline
+        {% endif %}
+    
+    car_lock_hood:
+      friendly_name: Lock hood
+      value_template: >-
+        {% if is_state_attr('sensor.nom_bs134_lock', 'hoodStateRollup', false)%} 
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('sensor.nom_bs134_lock', 'hoodStateRollup', false)%} 
+          mdi:lock-outline
+        {% else %}
+          mdi:lock-open-variant-outline
+        {% endif %}
+    
+    car_window_front_left:
+      friendly_name: Window Front Left
+      value_template: >-
+        {% if is_state_attr('binary_sensor.nom_bs134_windows_closed', 'windowstatusfrontleft', '2')%} 
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('binary_sensor.nom_bs134_windows_closed', 'windowstatusfrontleft', '2')%} 
+          mdi:window-closed
+        {% else %}
+          mdi:window-open
+        {% endif %}
+    
+    car_window_front_right:
+      friendly_name: Window Front Right
+      value_template: >-
+        {% if is_state_attr('binary_sensor.nom_bs134_windows_closed', 'windowstatusfrontright', '2')%} 
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('binary_sensor.nom_bs134_windows_closed', 'windowstatusfrontright', '2')%} 
+          mdi:window-closed
+        {% else %}
+          mdi:window-open
+        {% endif %}
+    
+    car_window_rear_left:
+      friendly_name: Window Rear Left
+      value_template: >-
+        {% if is_state_attr('binary_sensor.nom_bs134_windows_closed', 'windowstatusrearleft', '2')%} 
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('binary_sensor.nom_bs134_windows_closed', 'windowstatusrearleft', '2')%} 
+          mdi:window-closed
+        {% else %}
+          mdi:window-open
+        {% endif %}
+    
+    car_window_rear_right:
+      friendly_name: Window Rear Right
+      value_template: >-
+        {% if is_state_attr('binary_sensor.nom_bs134_windows_closed', 'windowstatusrearright', '2')%} 
+            Closed
+        {% else %}
+            Open
+        {% endif %}
+      icon_template: >
+        {% if is_state_attr('binary_sensor.nom_bs134_windows_closed', 'windowstatusrearright', '2')%} 
+          mdi:window-closed
+        {% else %}
+          mdi:window-open
+        {% endif %}

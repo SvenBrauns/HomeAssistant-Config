@@ -1,0 +1,151 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+discovery:
+sun:
+lovelace:
+  mode: yaml
+  resources:
+    - url: /hacsfiles/button-card/button-card.js
+      type: module
+    - url: /local/kiosk.js
+      type: module
+    - url: /local/custom-lovelace/weather-card/weather-card.js
+      type: module
+    - url: /hacsfiles/lovelace-layout-card/layout-card.js
+      type: module
+    - url: /hacsfiles/lovelace-card-mod/card-mod.js
+      type: module
+    - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
+      type: module
+    - url: /hacsfiles/lovelace-xiaomi-vacuum-map-card/xiaomi-vacuum-map-card.js
+      type: module
+    - url: /hacsfiles/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
+      type: module
+    - url: /hacsfiles/ha-floorplan/floorplan.js
+      type: module
+
+logger:
+  default: warn
+  logs:
+    homeassistant.components.dialogflow: debug
+    homeassistant.core: debug
+zone:
+  - name: Home
+    latitude: !secret latitude
+    longitude: !secret longitude
+    radius: 10
+    icon: mdi:account-multiple
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
+google_assistant:
+  project_id: assistanthome-assistant
+  service_account: 
+    private_key: !secret google_private_key
+    client_email: !secret google_client_email
+  report_state: true
+  expose_by_default: false
+  exposed_domains:
+    - switch
+    - light
+    - scene
+  entity_config:
+    vacuum.robby:
+      name: Robby
+      room: Wohnzimmer
+    light.extended_color_light_2:
+      name: Flur Hinten
+      room: Flur
+    light.extended_color_light_3:
+      name: Flur Vorne
+      room: Flur
+    switch.scenes_schlafzimmer:
+      name: Heizung Schlafzimmer
+      aliases: Heizung im Schlafzimmer
+      room: Schlafzimmer
+    switch.windows:
+      name: Computer
+      room: Wohnzimmer
+    switch.scenes:
+      name: Heizung Wohnzimmer
+      aliases: Heizung im Wohnzimmer
+      room: Wohnzimmer
+    switch.nachttisch:
+      name: Nachttischlampe
+      room: Schlafzimmer
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+#Dialogflow Google Assistant
+dialogflow:
+      
+# Staubsauger
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret vacuum_host
+    token: !secret vacuum_token
+    name: Robby
+# Text to speech
+tts:
+  - platform: google_translate
+# Dateien eingfügen
+group: !include groups.yaml
+automation: !include automations.yaml
+intent_script: !include intent_scripts.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensors.yaml
+
+wake_on_lan:
+switch:
+  - platform: wake_on_lan
+    name: PC-Starten
+    host: !secret wol_host
+    mac: !secret wol_mac
+    
+  - platform: command_line
+    switches:
+      pc:
+        command_off: !secret command_line_pc_off
+        
+  - platform: template
+    switches:
+      nachttisch: # Nachttischlampe Switch
+        value_template: '{{ states.switch.nachttischlampe.state }}'
+        turn_on:
+          service: switch.turn_on
+          entity_id: switch.nachttischlampe
+        turn_off:
+          service: switch.turn_off
+          entity_id: switch.nachttischlampe
+      windows: # Windows Switch
+        value_template: '{{ states.switch.PC_Starten.state }}'
+        turn_on:
+          service: switch.turn_on
+          entity_id: switch.PC_Starten
+        turn_off:
+          service: switch.turn_off
+          entity_id: switch.pc
+      scenes:
+        value_template: "{{ state_attr ('climate.heizung_wohnzimmer', 'temperature') >= 21 and state_attr ('climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2', 'temperature') >= 21 }}"
+        turn_on:
+          service: scene.turn_on
+          entity_id: scene.wohnzimmer_anwesend
+        turn_off:
+          service: scene.turn_on
+          entity_id: scene.wohnzimmer_abwesen
+      scenes_schlafzimmer:
+        value_template: "{{ state_attr('climate.heizung_schlafzimmer', 'temperature') >= 21 }}"
+        turn_on:
+          service: scene.turn_on
+          entity_id: scene.schlafzimmer_anwesend
+        turn_off:
+          service: scene.turn_on
+          entity_id: scene.schlafzimmer_abwesend
+          
+waste_collection_schedule: # Nerdbridge Abfallkalender
+  sources:
+    - name: ics
+      args:
+        url: !secret waste_url

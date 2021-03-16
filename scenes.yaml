@@ -1,0 +1,34 @@
+- id: '1605907638027'
+  name: Wohnzimmer Anwesend
+  entities:
+    climate.heizung_wohnzimmer:
+      temperature: 21
+      state: ready
+    climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2:
+      temperature: 21
+      state: ready
+  icon: mdi:fire
+- id: '1605907730168'
+  name: Wohnzimmer Abwesen
+  entities:
+    climate.heizung_wohnzimmer:
+      temperature: 17
+      state: ready
+    climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2:
+      temperature: 17
+      state: ready
+  icon: mdi:ice-cream
+- id: '1607098280624'
+  name: Schlafzimmer Anwesend
+  entities:
+    climate.heizung_schlafzimmer:
+      temperature: 21
+      state: ready
+  icon: mdi:fire
+- id: '1607098387782'
+  name: Schlafzimmer Abwesend
+  entities:
+    climate.heizung_schlafzimmer:
+      temperature: 13
+      state: ready
+  icon: mdi:ice-cream

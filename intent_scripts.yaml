@@ -1,0 +1,13 @@
+Temperatur:  # Intent type
+    speech:
+      text: Es sind {{ state_attr('climate.heizung_' + Raum, 'current_temperature') }} Grad
+      
+Temperatur_Stellen:
+    speech: 
+      text: Temperatur im {{ Raum }} wird auf {{ Temperatur3.amount }} Grad gestellt.
+    action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.heizung_{{Raum}}
+      data:
+        temperature: "{{ Temperatur3.amount | float }}"
