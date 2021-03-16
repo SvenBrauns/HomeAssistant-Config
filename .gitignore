@@ -5,16 +5,16 @@
 !*.yaml
 !.gitignore
 !*.md
+!*.xml
 
 # Ignore folders.
 .storage
-.vscode
 .cloud
 .google.token
 custom_components
+.vscode
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
-.mercedesme-token-cache
