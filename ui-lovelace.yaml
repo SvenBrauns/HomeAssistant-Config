@@ -770,7 +770,7 @@ views:
                 hourly_forecast: false
                 number_of_forecasts: 5
   - title: Tanken
-    panel: true
+    panel: false
     cards:
       - type: vertical-stack
         cards:
