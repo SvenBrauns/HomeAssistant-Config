@@ -772,7 +772,7 @@ views:
   - title: Tanken
     panel: true
     cards:
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
           - type: sensor
             entity: sensor.tankerkoenig_aral_tankstelle_e5
