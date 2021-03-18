@@ -79,6 +79,18 @@ http:
   ssl_key: /ssl/privkey.pem
 #Dialogflow Google Assistant
 dialogflow:
+
+#Tankstellen
+tankerkoenig:
+  api_key: !secret tankerkoenig_api-key
+  radius: 1
+  scan_interval: "0:10:01"
+  stations:
+    - 3e394cab-16b0-4f01-b7ba-84aa3053ef90
+    - 32c32c26-3afc-4a25-8c30-b1b5c2926275
+  fuel_types:
+    - "diesel"
+    - "e5"
       
 # Staubsauger
 vacuum:
