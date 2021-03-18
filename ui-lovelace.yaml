@@ -779,6 +779,7 @@ views:
             unit: €
             name: Aral Göttingen
             graph: line
+            detail: 2
             hours_to_show: 48
             style: "ha-card { height: 100%; }"
           - type: sensor
@@ -786,6 +787,7 @@ views:
             unit: €
             name: SAS Adelebsen
             graph: line
+            detail: 2
             hours_to_show: 48
             style: "ha-card { height: 100%; }"
           - type: sensor
@@ -793,5 +795,6 @@ views:
             unit: €
             name: TAS Bodenfelde
             graph: line
+            detail: 2
             hours_to_show: 48
             style: "ha-card { height: 100%; }"
