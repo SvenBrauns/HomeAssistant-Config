@@ -772,21 +772,23 @@ views:
   - title: Tanken
     panel: true
     cards:
-      - type: sensor
-        entity: sensor.tankerkoenig_aral_tankstelle_e5
-        unit: €
-        name: Aral Göttingen
-        graph: line
-        hours_to_show: 48
-      - type: sensor
-        entity: sensor.tankerkoenig_sas_center_lutz_zirpel_e5
-        unit: €
-        name: SAS Adelebsen
-        graph: line
-        hours_to_show: 48
-      - type: sensor
-        entity: sensor.tankerkoenig_tas_bodenfelde_e5
-        unit: €
-        name: TAS Bodenfelde
-        graph: line
-        hours_to_show: 48
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            entity: sensor.tankerkoenig_aral_tankstelle_e5
+            unit: €
+            name: Aral Göttingen
+            graph: line
+            hours_to_show: 48
+          - type: sensor
+            entity: sensor.tankerkoenig_sas_center_lutz_zirpel_e5
+            unit: €
+            name: SAS Adelebsen
+            graph: line
+            hours_to_show: 48
+          - type: sensor
+            entity: sensor.tankerkoenig_tas_bodenfelde_e5
+            unit: €
+            name: TAS Bodenfelde
+            graph: line
+            hours_to_show: 48
