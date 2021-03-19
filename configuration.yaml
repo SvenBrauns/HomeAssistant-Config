@@ -25,6 +25,15 @@ lovelace:
     - url: /hacsfiles/ha-floorplan/floorplan.js
       type: module
 
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: homeassistant
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
+
 logger:
   default: warn
   logs:
