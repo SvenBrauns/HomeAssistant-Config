@@ -26,7 +26,7 @@ lovelace:
       type: module
 
 recorder:
-  purge_days: 60
+  purge_keep_days: 60
   db_url: !secret recorder_db_url
 
 logger:
