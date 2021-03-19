@@ -774,27 +774,10 @@ views:
     cards:
       - type: vertical-stack
         cards:
-          - type: sensor
-            entity: sensor.tankerkoenig_aral_tankstelle_e5
-            unit: €
-            name: Aral Göttingen
-            graph: line
-            detail: 2
-            hours_to_show: 48
-            style: "ha-card { height: 100%; }"
-          - type: sensor
-            entity: sensor.tankerkoenig_sas_center_lutz_zirpel_e5
-            unit: €
-            name: SAS Adelebsen
-            graph: line
-            detail: 2
-            hours_to_show: 48
-            style: "ha-card { height: 100%; }"
-          - type: sensor
-            entity: sensor.tankerkoenig_tas_bodenfelde_e5
-            unit: €
-            name: TAS Bodenfelde
-            graph: line
-            detail: 2
-            hours_to_show: 48
-            style: "ha-card { height: 100%; }"
+          - type: history-graph
+            entities:
+              - sensor.tankerkoenig_aral_tankstelle_e5
+              - sensor.tankerkoenig_tas_bodenfelde_e5
+              - sensor.tankerkoenig_sas_center_lutz_zirpel_e5
+            hours_to_show: 80
+            title: Sprit-Preise
