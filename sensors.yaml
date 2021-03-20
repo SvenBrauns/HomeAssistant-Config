@@ -1,12 +1,11 @@
 - platform: rest
   resource: https://www.openligadb.de/api/getnextmatchbyleagueteam/4442/7
-  name: Naechstes_Dortmund_Spiel
+  name: Team1_Name
   headers:
     Content-Type: application/json
-  json_attributes_path: $.Match
+  json_attributes_path: $.Match.Team1
   json_attributes:
-    - Team1
-    - Team2
+    - ShortName
   
 
 
