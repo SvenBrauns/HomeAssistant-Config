@@ -4,9 +4,11 @@
   headers:
     Content-Type: application/json
   #json_attributes_path: $.Match.Team1
-  #json_attributes:
-  #  - ShortName
-  value_template: '{{ value_json["Match"]["Team1"]["ShortName"] }}'
+  json_attributes:
+    - Team1
+    - Team2
+    - MatchDateTime
+  value_template: "OK"
   
 
 
