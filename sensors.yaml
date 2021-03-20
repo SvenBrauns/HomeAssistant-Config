@@ -1,3 +1,8 @@
+- platform: rest
+  resource: https://www.openligadb.de/api/getnextmatchbyleagueteam/4442/7
+  name: Nächstes Dortmund Spiel
+  
+
 - platform: github
   access_token: !secret github_access_token
   repositories:
