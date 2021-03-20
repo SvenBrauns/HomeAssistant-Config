@@ -39,6 +39,7 @@ logger:
   logs:
     homeassistant.components.dialogflow: debug
     homeassistant.core: debug
+    homeassistant.components.rest_command: debug
 zone:
   - name: Home
     latitude: !secret latitude
