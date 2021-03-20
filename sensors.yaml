@@ -8,6 +8,7 @@
     - Team1
     - Team2
     - MatchDateTime
+    - ShortName
   value_template: "OK"
 
 - platform: template
