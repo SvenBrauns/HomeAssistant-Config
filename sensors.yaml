@@ -2,7 +2,7 @@
   resource: https://www.openligadb.de/api/getnextmatchbyleagueteam/4442/7
   name: team1
   headers:
-    Content-Type: application/json
+    Content-Type: application/xml
   value_template: "OK"
   json_attributes_path: "$.Match.Team1"
   json_attributes:
@@ -13,7 +13,7 @@
   resource: https://www.openligadb.de/api/getnextmatchbyleagueteam/4442/7
   name: team2
   headers:
-    Content-Type: application/json
+    Content-Type: application/xml
   value_template: "OK"
   json_attributes_path: "$.Match.Team2"
   json_attributes:
