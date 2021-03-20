@@ -19,7 +19,7 @@
     # team2:
     #   value_template: "{{ state_attr('sensor.naechstes_dortmund_spiel', 'Team2')}}"
     team1_name:
-      value_template: "{{ state_attr('sensor.team1', 'ShortName')}}"
+      value_template: "{{ states('sensor.team1')}}"
       entity_picture_template: >-
           {% if is_state('sensor.team1', 'Bayern') %}
             /local/icon-pictures/Bundesliga/Bayern_muenchen.png
@@ -59,7 +59,7 @@
             /local/icon-pictures/Bundesliga/Schalke_04.png
           {% endif %}
     team2_name:
-      value_template: "{{ stat_attr('sensor.team2', 'ShortName')}}"
+      value_template: "{{ states('sensor.team2')}}"
       entity_picture_template: >-
           {% if is_state('sensor.team2', 'Bayern') %}
             /local/icon-pictures/Bundesliga/Bayern_muenchen.png
