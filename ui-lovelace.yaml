@@ -768,7 +768,7 @@ views:
                 details: true
                 forecast: true
                 hourly_forecast: false
-                number_of_forecasts: 5
+                number_of_forecasts: 9
   - title: Tanken
     panel: false
     cards:
