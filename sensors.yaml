@@ -1,6 +1,6 @@
 - platform: rest
   resource: https://www.openligadb.de/api/getnextmatchbyleagueteam/4442/7
-  name: Team1_Name
+  name: naechstes_dortmund_spiel
   headers:
     Content-Type: application/json
   #json_attributes_path: $.Match.Team1
@@ -9,7 +9,93 @@
     - Team2
     - MatchDateTime
   value_template: "OK"
-  
+
+- platform: template
+  sensors:
+    team1:
+      value_template: "{{ state_attr('sensor.naechstes_dortmund_spiel', 'Team1')}}"
+    team2:
+      value_template: "{{ state_attr('sensor.naechstes_dortmund_spiel', 'Team2')}}"
+    team1_name:
+      value_template: "{{ state_attr('sensor.team1', 'ShortName')}}"
+      entity_picture_template: >-
+          {% if is_state_attr('sensor.team1', 'ShortName', 'Bayern') %}
+            /local/icon-pictures/Bundesliga/Bayern_muenchen.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Leipzig') %}
+            /local/icon-pictures/Bundesliga/RB_Leipzig.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Wolfsburg') %}
+            /local/icon-pictures/Bundesliga/VFL_Wolfsburg.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Frankfurt') %}
+            /local/icon-pictures/Bundesliga/Eintracht_Frankfurt.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Dortmund') %}
+            /local/icon-pictures/Bundesliga/Borussia_Dortmund.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Leverkusen') %}
+            /local/icon-pictures/Bundesliga/Bayer_04_Leverkusen.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Union Berlin') %}
+            /local/icon-pictures/Bundesliga/Union_Berlin.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Stuttgart') %}
+            /local/icon-pictures/Bundesliga/VFB_Stuttgart.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Gladbach') %}
+            /local/icon-pictures/Bundesliga/Borussia_Moenchengladbach.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Freiburg') %}
+            /local/icon-pictures/Bundesliga/SC_Freiburg.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Hoffenheim') %}
+            /local/icon-pictures/Bundesliga/TSG_1899_Hoffenheim.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Bremen') %}
+            /local/icon-pictures/Bundesliga/Werder_Bremen.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Augsburg') %}
+            /local/icon-pictures/Bundesliga/FC_Augsburg.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Köln') %}
+            /local/icon-pictures/Bundesliga/FC_Koeln.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Bielefeld') %}
+            /local/icon-pictures/Bundesliga/Arminia_Bielefeld.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Hertha') %}
+            /local/icon-pictures/Bundesliga/Hertha_BSC.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Mainz') %}
+            /local/icon-pictures/Bundesliga/FSV_Mainz_05.png
+          {% elif is_state_attr('sensor.team1', 'ShortName', 'Schalke') %}
+            /local/icon-pictures/Bundesliga/Schalke_04.png
+          {% endif %}
+    team2_name:
+      value_template: "{{ stat_attr('sensor.team2', 'ShortName')}}"
+      entity_picture_template: >-
+          {% if is_state_attr('sensor.team2', 'ShortName', 'Bayern') %}
+            /local/icon-pictures/Bundesliga/Bayern_muenchen.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Leipzig') %}
+            /local/icon-pictures/Bundesliga/RB_Leipzig.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Wolfsburg') %}
+            /local/icon-pictures/Bundesliga/VFL_Wolfsburg.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Frankfurt') %}
+            /local/icon-pictures/Bundesliga/Eintracht_Frankfurt.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Dortmund') %}
+            /local/icon-pictures/Bundesliga/Borussia_Dortmund.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Leverkusen') %}
+            /local/icon-pictures/Bundesliga/Bayer_04_Leverkusen.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Union Berlin') %}
+            /local/icon-pictures/Bundesliga/Union_Berlin.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Stuttgart') %}
+            /local/icon-pictures/Bundesliga/VFB_Stuttgart.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Gladbach') %}
+            /local/icon-pictures/Bundesliga/Borussia_Moenchengladbach.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Freiburg') %}
+            /local/icon-pictures/Bundesliga/SC_Freiburg.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Hoffenheim') %}
+            /local/icon-pictures/Bundesliga/TSG_1899_Hoffenheim.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Bremen') %}
+            /local/icon-pictures/Bundesliga/Werder_Bremen.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Augsburg') %}
+            /local/icon-pictures/Bundesliga/FC_Augsburg.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Köln') %}
+            /local/icon-pictures/Bundesliga/FC_Koeln.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Bielefeld') %}
+            /local/icon-pictures/Bundesliga/Arminia_Bielefeld.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Hertha') %}
+            /local/icon-pictures/Bundesliga/Hertha_BSC.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Mainz') %}
+            /local/icon-pictures/Bundesliga/FSV_Mainz_05.png
+          {% elif is_state_attr('sensor.team2', 'ShortName', 'Schalke') %}
+            /local/icon-pictures/Bundesliga/Schalke_04.png
+          {% endif %}
 
 
 
