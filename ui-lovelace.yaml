@@ -761,7 +761,7 @@ views:
                 gridrow: 1 / 2
                 gridcol: 6 / 7
                 style: "ha-card { height: 100%; }"
-                entity: weather.openweathermap
+                entity: weather.dwd_weather_bodenfelde_amelith
                 name: Bodenfelde
                 icons: "/local/custom-lovelace/weather-card/icons/"
                 current: true
