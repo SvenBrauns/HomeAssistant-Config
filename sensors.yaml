@@ -1,23 +1,29 @@
 - platform: rest
   resource: https://www.openligadb.de/api/getnextmatchbyleagueteam/4442/7
-  name: naechstes_dortmund_spiel
+  name: team1
   headers:
     Content-Type: application/json
-  #json_attributes_path: $.Match.Team1
+  json_attributes_path: $.Match.Team1
   json_attributes:
-    - Team1
-    - Team2
-    - MatchDateTime
-    - Team1.ShortName
-    - Team2.ShortName
+    - ShortName
+  value_template: "OK"
+
+- platform: rest
+  resource: https://www.openligadb.de/api/getnextmatchbyleagueteam/4442/7
+  name: team2
+  headers:
+    Content-Type: application/json
+  json_attributes_path: $.Match.Team2
+  json_attributes:
+    - ShortName
   value_template: "OK"
 
 - platform: template
   sensors:
-    team1:
-      value_template: "{{ state_attr('sensor.naechstes_dortmund_spiel', 'Team1')}}"
-    team2:
-      value_template: "{{ state_attr('sensor.naechstes_dortmund_spiel', 'Team2')}}"
+    # team1:
+    #   value_template: "{{ state_attr('sensor.naechstes_dortmund_spiel', 'Team1')}}"
+    # team2:
+    #   value_template: "{{ state_attr('sensor.naechstes_dortmund_spiel', 'Team2')}}"
     team1_name:
       value_template: "{{ state_attr('sensor.team1', 'ShortName')}}"
       entity_picture_template: >-
