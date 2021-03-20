@@ -6,7 +6,7 @@
   #json_attributes_path: $.Match.Team1
   #json_attributes:
   #  - ShortName
-  value_template: '{{ value_json.Match.Team1.ShortName }}'
+  value_template: '{{ value_json["Match"]["Team1"]["ShortName"] }}'
   
 
 
