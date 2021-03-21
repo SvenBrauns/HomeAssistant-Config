@@ -42,24 +42,12 @@ views:
         hold_action:
           action: more-info
         entity: switch.scenes_schlafzimmer
-
-      - type: button
-        tap_action:
-          action: toggle
-        hold_action:
-          action: more-info
-        icon: mdi:desktop-classic
-        show_icon: true
-        show_name: true
-        entity: switch.windows
-        name: Sven-PC
-      - type: button
-        tap_action:
-          action: toggle
-        hold_action:
-          action: more-info
-        icon: mdi:home-thermometer-outline
-        show_icon: true
-        show_name: true
-        entity: switch.smart_switch_01_switch
-        name: Test
+      - type: history-graph
+        entities:
+          - climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2
+          - climate.heizung_schlafzimmer
+          - climate.heizung_wohnzimmer
+        hours_to_show: 80
+        title: Temperatur 1. Stock
+        layout:
+          grid-area: p31
