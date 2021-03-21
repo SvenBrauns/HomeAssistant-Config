@@ -8,21 +8,13 @@ views:
       - type: thermostat
         entity: climate.heizung_wohnzimmer
         name: Wohnzimmer Bahnhof
-        view_layout:
-          grid-area:  header
       - type: thermostat
         entity: climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2
         name: Wohnzimmer Balkon
-        view_layout:
-          grid-area:  header
       - type: thermostat
         entity: climate.heizung_schlafzimmer
         name: Schlafzimmer
-        view_layout:
-          grid-area:  header
       - type: button
-        view_layout:
-          grid-area:  footer
         tap_action:
           action: toggle
         hold_action:
@@ -33,8 +25,6 @@ views:
         entity: switch.windows
         name: Sven-PC
       - type: button
-        view_layout:
-          grid-area:  footer
         tap_action:
           action: toggle
         hold_action:
