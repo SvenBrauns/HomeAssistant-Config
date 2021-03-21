@@ -3,7 +3,7 @@ views:
   - title: Test
     type: custom:grid-layout
     layout:
-      grid-template-columns: 30% 30% 30%
+      grid-template-columns: 300px 300px 300px
       grid-template-rows: auto 150px 150px 150px auto
       grid-template-areas: |
         ". . ."
