@@ -3,7 +3,7 @@ views:
   - title: Test
     type: custom:grid-layout
     layout:
-      grid-template-columns: 25% 1fr 50px 25%
+      grid-template-columns: 50% 50%
       grid-template-rows: auto
       grid-template-areas: |
         "header header header header"
