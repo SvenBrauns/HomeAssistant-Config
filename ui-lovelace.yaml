@@ -26,7 +26,11 @@ views:
         name: Schlafzimmer
         view_layout:
           grid-area: p13
-      - type: button
+      - type: custom:button-card
+        styles:
+          icon:
+            - height:  20px
+            - width: 20px
         view_layout:
           grid-area: p21
         tap_action:
@@ -34,7 +38,11 @@ views:
         hold_action:
           action: more-info
         entity: switch.scenes
-      - type: button
+      - type: custom:button-card
+        styles:
+          icon:
+            - height:  20px
+            - width: 20px
         view_layout:
           grid-area: p23
         tap_action:
