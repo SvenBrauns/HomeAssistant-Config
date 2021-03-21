@@ -1,26 +1,42 @@
 title: "  "
 views:
   - title: Test
-    type: custom:horizontal-layout
+    type: custom:grid-layout
     layout:
-      max_cols: 3
+      grid-template-columns: 30% 30% 30%
+      grid-template-rows: auto
+      grid-template-areas: |
+        ". . ."
+        "p11 p12 p13"
+        "p21 p21 p23"
+        "p31 p31 p31"
     cards:
       - type: thermostat
         entity: climate.heizung_wohnzimmer
         name: Wohnzimmer Bahnhof
+        layout:
+          grid-area: p11
       - type: thermostat
         entity: climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2
         name: Wohnzimmer Balkon
+        layout:
+          grid-area: p12
       - type: thermostat
         entity: climate.heizung_schlafzimmer
         name: Schlafzimmer
+        layout:
+          grid-area: p13
       - type: button
+        layout:
+          grid-area: p21
         tap_action:
           action: toggle
         hold_action:
           action: more-info
         entity: switch.scenes
       - type: button
+        layout:
+          grid-area: p23
         tap_action:
           action: toggle
         hold_action:
