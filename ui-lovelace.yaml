@@ -11,12 +11,20 @@ views:
         "footer footer footer footer"
       mediaquery:
         "(max-width: 600px)":
-          grid-template-columns: 50% 50%
+          grid-template-columns: 1fr 1fr 1fr
           grid-template-areas: |
             "header sidebar"
             "main main"
             "footer footer"
     cards:
+      - type: thermostat
+        entity: climate.heizung_wohnzimmer
+        name: Wohnzimmer Bahnhof
+      - type: thermostat
+        entity: climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2
+        name: Wohnzimmer Balkon
+      - type: thermostat
+        entity: climate.heizung_schlafzimmer
       - type: button
         tap_action:
           action: toggle
