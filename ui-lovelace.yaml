@@ -2,13 +2,8 @@ title: "  "
 views:
   - title: Test
     type: custom:horizontal-layout
-    # layout:
-    #   grid-template-columns: 50% 50%
-    #   grid-template-rows: auto
-    #   grid-template-areas: |
-    #     "header header header"
-    #     "main main . sidebar"
-    #     "footer footer footer footer"
+    layout:
+      max_cols: 3
     cards:
       - type: thermostat
         entity: climate.heizung_wohnzimmer
