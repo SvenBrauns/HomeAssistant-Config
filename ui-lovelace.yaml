@@ -14,20 +14,20 @@ views:
       - type: thermostat
         entity: climate.heizung_wohnzimmer
         name: Wohnzimmer Bahnhof
-        layout:
+        view_layout:
           grid-area: p11
       - type: thermostat
         entity: climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2
         name: Wohnzimmer Balkon
-        layout:
+        view_layout:
           grid-area: p12
       - type: thermostat
         entity: climate.heizung_schlafzimmer
         name: Schlafzimmer
-        layout:
+        view_layout:
           grid-area: p13
       - type: button
-        layout:
+        view_layout:
           grid-area: p21
         tap_action:
           action: toggle
@@ -35,7 +35,7 @@ views:
           action: more-info
         entity: switch.scenes
       - type: button
-        layout:
+        view_layout:
           grid-area: p23
         tap_action:
           action: toggle
@@ -49,5 +49,5 @@ views:
           - climate.heizung_wohnzimmer
         hours_to_show: 80
         title: Temperatur 1. Stock
-        layout:
+        view_layout:
           grid-area: p31
