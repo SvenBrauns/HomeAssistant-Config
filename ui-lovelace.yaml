@@ -29,8 +29,8 @@ views:
       - type: custom:button-card
         styles:
           icon:
-            - height:  20px
-            - width: 20px
+            - height:  60px
+            - width: 60px
         view_layout:
           grid-area: p21
         tap_action:
@@ -41,8 +41,8 @@ views:
       - type: custom:button-card
         styles:
           icon:
-            - height:  20px
-            - width: 20px
+            - height:  60px
+            - width: 60px
         view_layout:
           grid-area: p23
         tap_action:
