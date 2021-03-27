@@ -40,6 +40,7 @@ logger:
     homeassistant.components.dialogflow: debug
     homeassistant.core: debug
     homeassistant.components.rest_command: debug
+    homeassistant.intent_script: debug
 zone:
   - name: Home
     latitude: !secret latitude
