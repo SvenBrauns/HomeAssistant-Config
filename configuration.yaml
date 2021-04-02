@@ -71,6 +71,9 @@ google_assistant:
     light.extended_color_light_3:
       name: Flur Vorne
       room: Flur
+    light.schlafzimmer:
+      name: Schlafzimmer
+      room: Schlafzimmer
     switch.scenes_schlafzimmer:
       name: Heizung Schlafzimmer
       aliases: Heizung im Schlafzimmer
