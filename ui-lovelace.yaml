@@ -6,8 +6,6 @@ views:
     map_camera: camera.xiaomi_cloud_map_extractor
     camera_calibration: true
     language: "de"
-    modes: 
-      - go_to_target
   - title: Test
     type: custom:grid-layout
     layout:
