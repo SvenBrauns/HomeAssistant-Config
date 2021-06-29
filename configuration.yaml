@@ -117,11 +117,11 @@ tankerkoenig:
     - "e5"
       
 # Staubsauger
-vacuum:
-  - platform: xiaomi_miio
-    host: !secret vacuum_host
-    token: !secret vacuum_token
-    name: Robby
+#vacuum:
+#  - platform: xiaomi_miio
+#    host: !secret vacuum_host
+#    token: !secret vacuum_token
+#    name: Robby
 # Text to speech
 tts:
   - platform: google_translate
