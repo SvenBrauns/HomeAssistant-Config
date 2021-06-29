@@ -7,7 +7,7 @@ views:
     camera_calibration: true
     language: "de"
     modes: 
-     - go_to_target
+      - go_to_target
   - title: Test
     type: custom:grid-layout
     layout:
