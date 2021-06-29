@@ -1,5 +1,10 @@
 title: "  "
 views:
+  - title: Test1
+    type: custom:xiaomi-vacuum-map-card
+    entity: vacuum.robby
+    map_camera: camera.xiaomi_cloud_map_extractor
+    camera_calibration: true
   - title: Test
     type: custom:grid-layout
     layout:
