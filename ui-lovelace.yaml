@@ -10,9 +10,12 @@ views:
         "main main main main main main sidebar"
         "footer footer footer footer footer sidebar"
     cards:
+      - type: markdown
+        content: >
+          ##Schlafzimmer
       - type: entity
         entity: sensor.heizung_schlafzimmer_battery_level_3
-        name: Heizung Schlafzimmer Batterie
+        name: Heizung Batterie
         unit: "%"
         view_layout:
           grid-column: 1
