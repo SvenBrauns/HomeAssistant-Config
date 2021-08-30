@@ -12,7 +12,7 @@ views:
     cards:
       - type: markdown
         content: >
-          ##Schlafzimmer
+          # Schlafzimmer
         view-layout:
           grid-column: 1
           grid-row: 1
@@ -24,6 +24,7 @@ views:
           grid-column: 1
           grid-row: 2
           #grid-area: header
+      
 
 
   - title: Test1
