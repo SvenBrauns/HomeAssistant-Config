@@ -36,20 +36,18 @@ influxdb:
 
 logger:
   default: warn
-  logs:
-    homeassistant.components.dialogflow: debug
-    homeassistant.core: debug
-    homeassistant.components.rest_command: debug
-    homeassistant.intent_script: debug
+
 zone:
   - name: Home
     latitude: !secret latitude
     longitude: !secret longitude
     radius: 10
     icon: mdi:account-multiple
+
 spotify:
   client_id: !secret spotify_client_id
   client_secret: !secret spotify_client_secret
+
 google_assistant:
   project_id: assistanthome-assistant
   service_account: 
@@ -88,9 +86,11 @@ google_assistant:
     switch.nachttisch:
       name: Nachttischlampe
       room: Schlafzimmer
+
 http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
+
 #Dialogflow Google Assistant
 dialogflow:
 
@@ -104,6 +104,7 @@ camera:
     draw: ['all']
     attributes:
       - calibration_points  
+
 #Tankstellen
 tankerkoenig:
   api_key: !secret tankerkoenig_api-key
@@ -122,9 +123,11 @@ tankerkoenig:
 #    host: !secret vacuum_host
 #    token: !secret vacuum_token
 #    name: Robby
+
 # Text to speech
 tts:
   - platform: google_translate
+
 # Dateien eingfügen
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -134,6 +137,7 @@ scene: !include scenes.yaml
 sensor: !include sensors.yaml
 
 wake_on_lan:
+
 switch:
   - platform: wake_on_lan
     name: PC-Starten
@@ -179,8 +183,9 @@ switch:
         turn_off:
           service: scene.turn_on
           entity_id: scene.schlafzimmer_abwesend
-          
-waste_collection_schedule: # Nerdbridge Abfallkalender
+
+# Nerdbridge Abfallkalender
+waste_collection_schedule:
   sources:
     - name: ics
       args:
