@@ -15,7 +15,9 @@ views:
         name: Heizung Schlafzimmer Batterie
         unit: "%"
         view_layout:
-          grid-area: header
+          grid-column: 1
+          grid-row: 1
+          #grid-area: header
 
 
   - title: Test1
