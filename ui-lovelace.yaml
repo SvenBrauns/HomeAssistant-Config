@@ -10,12 +10,44 @@ views:
         "main main main main main main sidebar"
         "footer footer footer footer footer sidebar"
     cards:
+#Beschreibung der Spalten
       - type: markdown
         content: >
           # Schlafzimmer
         view-layout:
           grid-column: 1
           grid-row: 1
+      - type: markdown
+        content: >
+          # Wohnzimmer
+        view-layout:
+          grid-column: 2
+          grid-row: 1
+      - type: markdown
+        content: >
+          # Flur
+        view-layout:
+          grid-column: 3
+          grid-row: 1
+      - type: markdown
+        content: >
+          # Küche
+        view-layout:
+          grid-column: 4
+          grid-row: 1
+      - type: markdown
+        content: >
+          # Badezimmer
+        view-layout:
+          grid-column: 5
+          grid-row: 1
+      - type: markdown
+        content: >
+          # Müll
+        view-layout:
+          grid-column: 6
+          grid-row: 1
+#Inhalt der Spalten
       - type: entity
         entity: sensor.heizung_schlafzimmer_battery_level_3
         name: Heizung Batterie
@@ -23,8 +55,22 @@ views:
         view_layout:
           grid-column: 1
           grid-row: 2
-          #grid-area: header
-      
+      - type: entities
+        entities:
+          - entity: sensor.danfoss_devolo_home_control_radiator_thermostat_battery_level_2
+            name: Heizung Bahnhof Batterie
+          - entity: sensor.danfoss_devolo_home_control_radiator_thermostat_battery_level
+            name: Heizung Balkon Batterie
+        view_layout:
+          grid-column: 2
+          grid-row: 2
+      #- type: entity
+      #  entity: sensor.heizung_schlafzimmer_battery_level_3
+      #  name: Heizung Batterie
+      #  unit: "%"
+      #  view_layout:
+      #    grid-column: 1
+      #    grid-row: 2
 
 
   - title: Test1
