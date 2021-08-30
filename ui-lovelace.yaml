@@ -13,13 +13,16 @@ views:
       - type: markdown
         content: >
           ##Schlafzimmer
+        view-layout:
+          grid-column: 1
+          grid-row: 1
       - type: entity
         entity: sensor.heizung_schlafzimmer_battery_level_3
         name: Heizung Batterie
         unit: "%"
         view_layout:
           grid-column: 1
-          grid-row: 1
+          grid-row: 2
           #grid-area: header
 
 
