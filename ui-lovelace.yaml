@@ -41,7 +41,7 @@ views:
         content: >
           # Müll
         view-layout:
-          grid-column: 6
+          grid-column: 6 / 7
           grid-row: 1
 #Inhalt der Spalten
       - type: entity
@@ -90,6 +90,7 @@ views:
       - type: vertical-stack
         view_layout:
           grid-column: 6
+          grid-row: 2 / 3
         style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
@@ -155,6 +156,7 @@ views:
       - type: vertical-stack
         view_layout:
           grid-column: 7
+          grid-row: 2 / 3
         style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
