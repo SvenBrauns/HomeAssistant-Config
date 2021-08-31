@@ -64,13 +64,24 @@ views:
         view_layout:
           grid-column: 2
           grid-row: 2
-      #- type: entity
-      #  entity: sensor.heizung_schlafzimmer_battery_level_3
-      #  name: Heizung Batterie
-      #  unit: "%"
-      #  view_layout:
-      #    grid-column: 1
-      #    grid-row: 2
+      - type: thermostat
+        entity: climate.heizung_schlafzimmer
+        name: Schlafzimmer
+        view_layout:
+          grid-column: 1
+          grid-row: 3
+      - type: thermostat
+        entity: climate.heizung_wohnzimmer
+        name: Bahnhof
+        view_layout:
+          grid-column: 2
+          grid-row: 3
+      - type: thermostat
+        entity: climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2
+        name: Balkon
+        view_layout:
+          grid-column: 2
+          grid-row: 4
 
 
   - title: Test1
