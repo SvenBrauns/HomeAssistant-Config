@@ -26,6 +26,14 @@ lovelace:
       type: module
     - url: /hacsfiles/ha-floorplan/floorplan.js
       type: module
+  dashboards:
+    lovelace-handy:
+      mode: yaml
+      filename: lovelace-handy.yaml
+      title: Handy
+      icon: mdi:tablet-cellphone
+      show_in_sidebar: false
+      require_admin: false
 
 influxdb:
   host: a0d7b954-influxdb
