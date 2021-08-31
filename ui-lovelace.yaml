@@ -88,7 +88,7 @@ views:
           grid-row: 4
 #Müll
       - type: horizontal-stack
-        gridrow: 1 / 2
+        #gridrow: 1 / 2
         gridcol: 6
         style: "ha-card { height: 100%; }"
         cards:
@@ -153,7 +153,7 @@ views:
                 value: '[[[ return entity.state.split("|")[1] == 1 ]]]'
               - value: default
       - type: horizontal-stack
-        gridrow: 2 / 3
+        #gridrow: 2 / 3
         gridcol: 6
         style: "ha-card { height: 100%; }"
         cards:
