@@ -34,6 +34,13 @@ influxdb:
   max_retries: 3
   default_measurement: state
 
+#climate groups
+climate:
+  - platform: climate_group
+    name: Heizung_Wohnzimmer_Gruppe
+    entities:
+    - climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2
+    - climate.heizung_wohnzimmer
 logger:
   default: warn
 
