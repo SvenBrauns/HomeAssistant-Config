@@ -3,7 +3,7 @@ views:
   - title: Test
     type: custom:grid-layout
     layout:
-      grid-template-columns: 15% 7.5% 7.5% 15% 15% 15% auto
+      grid-template-columns: 15% 15% 15% 15% 15% auto
       grid-template-rows: auto
     cards:
 #Beschreibung der Spalten
@@ -17,7 +17,7 @@ views:
         content: >
           # Wohnzimmer
         view-layout:
-          grid-column: 2 / span 2
+          grid-column: 2
           grid-row: 1
       - type: markdown
         content: >
@@ -58,7 +58,7 @@ views:
           - entity: sensor.danfoss_devolo_home_control_radiator_thermostat_battery_level
             name: Heizung Balkon Batterie
         view_layout:
-          grid-column: 2 / span 2
+          grid-column: 2
           grid-row: 2
       - type: thermostat
         entity: climate.heizung_schlafzimmer
@@ -67,17 +67,12 @@ views:
           grid-column: 1
           grid-row: 3
       - type: thermostat
-        entity: climate.heizung_wohnzimmer
-        name: Bahnhof
+        entity: climate.heizung_wohnzimmer_gruppe
+        name: Heizung Wohnzimmer
         view_layout:
           grid-column: 2
           grid-row: 3
-      - type: thermostat
-        entity: climate.danfoss_devolo_home_control_radiator_thermostat_heating_1_2
-        name: Balkon
-        view_layout:
-          grid-column: 3
-          grid-row: 3
+
 
 
   - title: Test1
