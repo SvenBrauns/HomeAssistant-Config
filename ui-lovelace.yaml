@@ -75,12 +75,14 @@ views:
       - type: custom:light-entity-card
         entity: light.hall
         name: Flur
+        persist_features: true
         view_layout:
           grid-column: 3
           grid-row: 4
       - type: custom:light-entity-card
         entity: light.schlafzimmer
         name: Schlafzimmer
+        persist_features: true
         view_layout:
           grid-column: 1
           grid-row: 4
