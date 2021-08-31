@@ -3,7 +3,7 @@ views:
   - title: Test
     type: custom:grid-layout
     layout:
-      grid-template-columns: 15% 15% 15% 15% 15% 25%
+      grid-template-columns: 15% 15% 15% 15% 15% auto
       grid-template-rows: auto
     cards:
 #Beschreibung der Spalten
@@ -88,7 +88,8 @@ views:
           grid-row: 4
 #Müll
       - type: horizontal-stack
-        grid-column: 6
+        view_layout:
+          grid-column: 6
         style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
@@ -152,7 +153,8 @@ views:
                 value: '[[[ return entity.state.split("|")[1] == 1 ]]]'
               - value: default
       - type: horizontal-stack
-        grid-column: 6
+        view_layout:
+          grid-column: 6
         style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
