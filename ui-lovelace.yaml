@@ -91,7 +91,7 @@ views:
         view_layout:
           grid-column: 6
           grid-row: 2 / span 2
-        style: "ha-card { height: 100%; }"
+        style: "ha-card { height: 200%; }"
         cards:
           - type: 'custom:button-card'
             style: "ha-card { height: 200%; }"
