@@ -8,32 +8,26 @@ views:
       grid-template-columns: auto
       grid-template-rows: auto
     cards:
-      - type: markdown
-        content: >
-          # Schlafzimmer
-        view_layout:
-          grid-column: 1
-          grid-row: 1
       - type: entity
         entity: sensor.heizung_schlafzimmer_battery_level_3
         name: Heizung Batterie
         unit: "%"
         view_layout:
           grid-column: 1
-          grid-row: 2
+          grid-row: 1
       - type: thermostat
         entity: climate.heizung_schlafzimmer
         name: Schlafzimmer
         view_layout:
           grid-column: 1
-          grid-row: 3
+          grid-row: 2
       - type: custom:light-entity-card
         entity: light.schlafzimmer
         name: Schlafzimmer
         persist_features: true
         view_layout:
           grid-column: 1
-          grid-row: 4
+          grid-row: 3
 #Seite 2
   - title: Wohnzimmer
     type: custom:grid-layout
@@ -41,12 +35,6 @@ views:
       grid-template-columns: auto
       grid-template-rows: auto
     cards:
-      - type: markdown
-        content: >
-          # Wohnzimmer
-        view_layout:
-          grid-column: 1
-          grid-row: 1
       - type: entities
         entities:
           - entity: sensor.danfoss_devolo_home_control_radiator_thermostat_battery_level_2
@@ -55,13 +43,13 @@ views:
             name: Heizung Balkon Batterie
         view_layout:
           grid-column: 1
-          grid-row: 2
+          grid-row: 1
       - type: thermostat
         entity: climate.heizung_wohnzimmer_gruppe
         name: Heizung Wohnzimmer
         view_layout:
           grid-column: 1
-          grid-row: 3
+          grid-row: 2
 #Seite 3
   - title: Flur
     type: custom:grid-layout
@@ -69,19 +57,13 @@ views:
       grid-template-columns: auto
       grid-template-rows: auto
     cards:
-      - type: markdown
-        content: >
-          # Flur
-        view_layout:
-          grid-column: 1
-          grid-row: 1
       - type: custom:light-entity-card
         entity: light.hall
         name: Flur
         persist_features: true
         view_layout:
           grid-column: 1
-          grid-row: 2
+          grid-row: 1
 #Seite 4
   - title: Küche
     type: custom:grid-layout
@@ -89,12 +71,6 @@ views:
       grid-template-columns: auto
       grid-template-rows: auto
     cards:
-      - type: markdown
-        content: >
-          # Küche
-        view_layout:
-          grid-column: 1
-          grid-row: 1
 #Seite 5
   - title: Badezimmer
     type: custom:grid-layout
@@ -102,12 +78,6 @@ views:
       grid-template-columns: auto
       grid-template-rows: auto
     cards:
-      - type: markdown
-        content: >
-          # Badezimmer
-        view_layout:
-          grid-column: 1
-          grid-row: 1
 #Seite 6
   - title: Müll
     type: custom:grid-layout
@@ -115,16 +85,10 @@ views:
       grid-template-columns: 50% 50%
       grid-template-rows: auto
     cards:
-      - type: markdown
-        content: >
-          # Müll
-        view_layout:
-          grid-column: 1 / span 2
-          grid-row: 1
       - type: vertical-stack
         view_layout:
           grid-column: 1
-          grid-row: 2 / span 2
+          grid-row: 1 / span 2
         #style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
@@ -190,7 +154,7 @@ views:
       - type: vertical-stack
         view_layout:
           grid-column: 2
-          grid-row: 2 / span 2
+          grid-row: 1 / span 2
         #style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
