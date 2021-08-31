@@ -82,7 +82,7 @@ views:
   - title: Müll
     type: custom:grid-layout
     layout:
-      grid-template-columns: 50% 50%
+      grid-template-columns: auto
       grid-template-rows: auto
     cards:
       - type: vertical-stack
