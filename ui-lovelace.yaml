@@ -91,10 +91,10 @@ views:
         view_layout:
           grid-column: 6
           grid-row: 2 / span 2
-        style: "ha-card { height: 200%; }"
+        #style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
-            style: "ha-card { height: 200%; }"
+            #style: "ha-card { height: 100%; }"
             entity: sensor.buttoncardsensor1
             layout: icon_name_state2nd
             show_label: true
@@ -124,7 +124,7 @@ views:
                 value: '[[[ return entity.state.split("|")[1] == 1 ]]]'
               - value: default
           - type: 'custom:button-card'
-            style: "ha-card { height: 100%; }"
+            #style: "ha-card { height: 100%; }"
             entity: sensor.buttoncardsensor2
             layout: icon_name_state2nd
             show_label: true
@@ -157,10 +157,10 @@ views:
         view_layout:
           grid-column: 7
           grid-row: 2 / span 2
-        style: "ha-card { height: 100%; }"
+        #style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
-            style: "ha-card { height: 100%; }"
+            #style: "ha-card { height: 100%; }"
             entity: sensor.buttoncardsensor3
             layout: icon_name_state2nd
             show_label: true
@@ -190,7 +190,7 @@ views:
                 value: '[[[ return entity.state.split("|")[1] == 1 ]]]'
               - value: default
           - type: 'custom:button-card'
-            style: "ha-card { height: 100%; }"
+            #style: "ha-card { height: 100%; }"
             entity: sensor.buttoncardsensor4
             layout: icon_name_state2nd
             show_label: true
