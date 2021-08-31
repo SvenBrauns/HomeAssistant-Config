@@ -10,37 +10,37 @@ views:
       - type: markdown
         content: >
           # Schlafzimmer
-        view-layout:
+        view_layout:
           grid-column: 1
           grid-row: 1
       - type: markdown
         content: >
           # Wohnzimmer
-        view-layout:
+        view_layout:
           grid-column: 2
           grid-row: 1
       - type: markdown
         content: >
           # Flur
-        view-layout:
+        view_layout:
           grid-column: 3
           grid-row: 1
       - type: markdown
         content: >
           # Küche
-        view-layout:
+        view_layout:
           grid-column: 4
           grid-row: 1
       - type: markdown
         content: >
           # Badezimmer
-        view-layout:
+        view_layout:
           grid-column: 5
           grid-row: 1
       - type: markdown
         content: >
           # Müll
-        view-layout:
+        view_layout:
           grid-column: 6 / span 2
           grid-row: 1
 #Inhalt der Spalten
@@ -94,7 +94,7 @@ views:
         style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
-            style: "ha-card { height: 100%; }"
+            style: "ha-card { height: 200%; }"
             entity: sensor.buttoncardsensor1
             layout: icon_name_state2nd
             show_label: true
