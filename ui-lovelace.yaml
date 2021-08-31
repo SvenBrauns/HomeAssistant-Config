@@ -3,7 +3,7 @@ views:
   - title: Test
     type: custom:grid-layout
     layout:
-      grid-template-columns: 15% 15% 15% 15% 15% auto
+      grid-template-columns: 15% 15% 15% 15% 15% 25%
       grid-template-rows: auto
     cards:
 #Beschreibung der Spalten
