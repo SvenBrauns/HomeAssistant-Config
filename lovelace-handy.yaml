@@ -88,7 +88,7 @@ views:
       - type: vertical-stack
         view_layout:
           grid-column: 1
-          grid-row: 1 / span 2
+          grid-row: 1 / span 4
         #style: "ha-card { height: 100%; }"
         cards:
           - type: 'custom:button-card'
@@ -151,12 +151,6 @@ views:
                 operator: template
                 value: '[[[ return entity.state.split("|")[1] == 1 ]]]'
               - value: default
-      - type: vertical-stack
-        view_layout:
-          grid-column: 2
-          grid-row: 1 / span 2
-        #style: "ha-card { height: 100%; }"
-        cards:
           - type: 'custom:button-card'
             #style: "ha-card { height: 100%; }"
             entity: sensor.buttoncardsensor3
@@ -217,3 +211,4 @@ views:
                 operator: template
                 value: '[[[ return entity.state.split("|")[1] == 1 ]]]'
               - value: default
+          
